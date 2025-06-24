@@ -7,5 +7,8 @@ install.packages(c(
     "pheatmap",
     "Seurat",
     "SeuratData",
-    "tidyverse"
+    "tidyverse",
+    "devtools"
 ))
+
+devtools::install_github('satijalab/seurat-data')

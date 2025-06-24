@@ -1,4 +1,4 @@
-FROM --platform=arm64 rocker/rstudio:latest
+FROM --platform=arm64 jmgirard/rstudio2u
 
 COPY ./docker/install.R /tmp/install.R
 
