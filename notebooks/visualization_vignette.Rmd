@@ -97,7 +97,7 @@ baseplot <- DimPlot(pbmc3k.final, reduction = 'umap')
 baseplot + labs(title = 'Clustering of 2,700 PBMCs')
 # Use community-created themes, overwriting the default Seurat-applied theme
 # Install ggmin with remotes::install_github("sjessa/ggmin")
-baseplot + ggmin::theme_powerpoint()
+#baseplot + ggmin::theme_powerpoint()
 # Seurat also provides several built-in themes, such as DarkTheme; for more details see ?SeuratTheme
 baseplot + DarkTheme()
 # Chain themes together
@@ -109,7 +109,7 @@ library(ggplot2)
 plot <- baseplot + DarkTheme() + 
     theme(axis.title = element_text(size = 18), legend.text = element_text(size = 18)) + 
     guides(colour = guide_legend(override.aes = list(size = 10)))
-ggsave(filename = "../output/images/visualization_vignette.jpg", height = 7, width = 12, plot = plot, quality = 50)
+
 ```
 
 # Interactive plotting features
@@ -135,10 +135,6 @@ select.cells <- CellSelector(plot = plot)
 
 ![](./assets/pbmc_select.gif)
 
-```{r load_cells, echo=FALSE}
-select.cells <- readLines(con = './assets/pbmc_dcs_cells.txt')
-# select.cells <- paste0(select.cells, "-1")
-```
 
 We can then change the identity of these cells to turn them into their own mini-cluster.
 
